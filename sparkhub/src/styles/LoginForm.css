@@ -1,0 +1,95 @@
+.login-container {
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	max-width: 500px;
+	margin: 150px auto;
+	text-align: center;
+}
+
+.login-container h1 {
+	margin-bottom: 20px;
+	font-size: 2rem;
+	color: #333;
+}
+
+.login-container .heading {
+	font-size:2rem;
+	color: #001F3F;
+}
+
+.login-container .sub-heading {
+	font-size: 1.2rem;
+	color: #333;
+	font-style: italic;
+}
+
+.login-container .form-group {
+	margin-bottom: 20px;
+}
+
+.login-container .form-control {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	background-color: transparent;
+}
+
+.btn-login {
+	background-color: #5bc0de;
+	color: #fff;
+	border: none;
+	border-radius: 25px;
+	padding: 12px 50px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+	display: block;
+}
+
+.btn-login:hover {
+	background-color: #31b0d5;
+	transform: translateY(-2px);
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-login:active {
+	transform: translateY(0);
+	box-shadow: none;
+}
+.social-buttons {
+	margin-top: 20px;
+}
+
+.social-button {
+	display: inline-flex;
+	align-items: center;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	color: #333;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.social-button:hover {
+	background-color: #f0f0f0;
+}
+
+.social-button:first-child {
+	margin-right: 10px;
+}
+
+.text {
+	text-align: left;
+	margin-top: 15px;
+}
