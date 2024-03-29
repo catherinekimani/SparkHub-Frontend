@@ -3,6 +3,7 @@ a platform for sharing and collaborating on knowledge, such as tutorials, guides
 
 # Getting Started with Create React App
 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
