@@ -90,3 +90,19 @@
 	height: auto;
 	z-index: 1;
 }
+
+.success-message {
+	color: green;
+	font-weight: bold;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 999;
+}
+
+.success-message.show {
+	opacity: 1;
+}
