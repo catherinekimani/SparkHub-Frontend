@@ -7,15 +7,16 @@ import {
   USER_LOADED_FAIL,
   AUTHENTICATED_SUCCESS,
   AUTHENTICATED_FAIL,
-	LOGOUT,
-	PASSWORD_RESET_SUCCESS,
-	PASSWORD_RESET_FAIL,
-	PASSWORD_RESET_CONFIRM_SUCCESS,
-	PASSWORD_RESET_CONFIRM_FAIL,
-	SIGNUP_SUCCESS,
-	SIGNUP_FAIL,
-	ACTIVATION_SUCCESS,
-	ACTIVATION_FAIL
+  LOGOUT,
+  PASSWORD_RESET_SUCCESS,
+  PASSWORD_RESET_FAIL,
+  PASSWORD_RESET_CONFIRM_SUCCESS,
+  PASSWORD_RESET_CONFIRM_FAIL,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAIL,
+  ACTIVATION_SUCCESS,
+  ACTIVATION_FAIL,
+  SHOW_LOGIN_SUCCESS_MESSAGE,
 } from "./types";
 
 export const checkAuthenticated = () => async dispatch => {
@@ -98,6 +99,7 @@ export const login = (email, password) => async (dispatch) => {
 		dispatch({
 			type: LOGIN_FAIL,
 		});
+		throw err;
 	}
 };
 
@@ -195,4 +197,10 @@ export const logout = () => dispatch => {
 	dispatch({
 		type: LOGOUT
 	});
+};
+
+
+
+export const showLoginSuccessMessage = () => (dispatch) => {
+  dispatch({ type: SHOW_LOGIN_SUCCESS_MESSAGE });
 };

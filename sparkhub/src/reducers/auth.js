@@ -1,10 +1,10 @@
 import {
-	LOGIN_SUCCESS,
-	LOGIN_FAIL,
-	USER_LOADED_SUCCESS,
-	USER_LOADED_FAIL,
-	AUTHENTICATED_SUCCESS,
-	AUTHENTICATED_FAIL,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  USER_LOADED_SUCCESS,
+  USER_LOADED_FAIL,
+  AUTHENTICATED_SUCCESS,
+  AUTHENTICATED_FAIL,
   LOGOUT,
   PASSWORD_RESET_SUCCESS,
   PASSWORD_RESET_FAIL,
@@ -13,14 +13,16 @@ import {
   SIGNUP_SUCCESS,
   SIGNUP_FAIL,
   ACTIVATION_SUCCESS,
-  ACTIVATION_FAIL
-} from '../actions/types';
+  ACTIVATION_FAIL,
+  SHOW_LOGIN_SUCCESS_MESSAGE,
+} from "../actions/types";
 
 const initialState = {
   access: localStorage.getItem("access"),
-	refresh: localStorage.getItem("refresh"),
-	isAuthenticated: null,
-	user: null
+  refresh: localStorage.getItem("refresh"),
+  isAuthenticated: null,
+  user: null,
+  showLoginSuccessMessage: false,
 };
 
 export default function reducer (state = initialState, action) {
@@ -38,13 +40,18 @@ export default function reducer (state = initialState, action) {
         isAuthenticated: true,
         access: payload.access,
         refresh: payload.refresh,
+        showLoginSuccessMessage: true,
       };
-
+    case SHOW_LOGIN_SUCCESS_MESSAGE:
+      return {
+        ...state,
+        showLoginSuccessMessage: true,
+      };
     case SIGNUP_SUCCESS:
       return {
         ...state,
-        isAuthenticated: false
-      }
+        isAuthenticated: false,
+      };
 
     case USER_LOADED_SUCCESS:
       return {
@@ -56,17 +63,17 @@ export default function reducer (state = initialState, action) {
       return {
         ...state,
         isAuthenticated: false,
-			};
+      };
 
     case USER_LOADED_FAIL:
       return {
         ...state,
         user: null,
-			};
+      };
 
     case LOGIN_FAIL:
     case SIGNUP_FAIL:
-		case LOGOUT:
+    case LOGOUT:
       localStorage.removeItem("access");
       localStorage.removeItem("refresh");
       return {
@@ -84,8 +91,8 @@ export default function reducer (state = initialState, action) {
     case ACTIVATION_SUCCESS:
     case ACTIVATION_FAIL:
       return {
-        ...state
-      }
+        ...state,
+      };
 
     default:
       return state;
