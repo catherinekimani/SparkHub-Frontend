@@ -5,11 +5,14 @@ import { logout } from '../actions/auth'
 import { connect } from "react-redux";
 
 const Navbar = ({ logout, isAuthenticated, user }) => {
+
   const guestLinks = () => (
     <Fragment>
       <li className="navbar-item">
         {" "}
-        <Link to={"/login"}>Login</Link>{" "}
+        <Link to={"/login"} >
+          Login
+        </Link>{" "}
       </li>
       <li className="navbar-item">
         {" "}

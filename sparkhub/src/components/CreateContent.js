@@ -32,10 +32,10 @@ const CreateContent = ({ isAuthenticated, onContentCreated }) => {
     setContent("");
     setCategory("");
 
-    setSuccessMessage("Content created successfully!");
+    setSuccessMessage(true);
 
     setTimeout(() => {
-      setSuccessMessage("");
+      setSuccessMessage(false);
     }, 3000);
   };
 
@@ -97,7 +97,9 @@ const CreateContent = ({ isAuthenticated, onContentCreated }) => {
     <div className="create-content-container">
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
       <h2 className="create-content-header">Create Your Content Here</h2>
-      {successMessage && <p>{successMessage}</p>}
+      {successMessage && (
+        <p className="success-message">Content created successfully!</p>
+      )}
       <form onSubmit={handleSubmit} className="content-form">
         <label htmlFor="title">Title:</label>
         <input

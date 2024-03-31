@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "../styles/ContentList.css";
 import { connect } from "react-redux";
-import { updateContent } from '../actions/contentActions';
+import { updateContent } from "../actions/contentActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrash,
@@ -41,22 +41,22 @@ const ContentList = ({
     }
   };
 
-  const handleSaveEdit = () => {
-    const index = content.findIndex((item) => item.id === editingContentId);
-    if (index !== -1) {
-      const updatedContent = [...content];
-      updatedContent[index] = {
-        ...updatedContent[index],
-        title: editedContent.title,
-        description: editedContent.description,
-      };
+const handleSaveEdit = () => {
+  const index = content.findIndex((item) => item.id === editingContentId);
+  if (index !== -1) {
+    const updatedContent = [...content];
+    updatedContent[index] = {
+      ...updatedContent[index],
+      title: editedContent.title,
+      description: editedContent.description,
+    };
 
-      updateContent(updatedContent);
+    updateContent(updatedContent);
+    setEditingContentId(null);
+    setEditedContent({});
+  }
+};
 
-      setEditingContentId(null);
-      setEditedContent({});
-    }
-  };
 
   const handleCancelEdit = () => {
     setEditingContentId(null);
@@ -88,7 +88,7 @@ const ContentList = ({
             <p>{item.description}</p>
             {renderContentBasedOnType(item)}
             <div className="button-container">
-              {isAuthenticated && (
+              {!editingContentId && isAuthenticated && (
                 <>
                   <button
                     className="action-button"
@@ -101,7 +101,12 @@ const ContentList = ({
                     onClick={() => handleLikeClick(item.id)}
                   >
                     <FontAwesomeIcon icon={faThumbsUp} />
+                    {item.likes}
                   </button>
+                </>
+              )}
+              {isAuthenticated && (
+                <>
                   {editingContentId === item.id ? (
                     <>
                       <input
@@ -154,7 +159,6 @@ const ContentList = ({
                 <FontAwesomeIcon icon={faShare} />
               </button>
             </div>
-            <p className="likes">Likes: {item.likes}</p>
           </div>
         </div>
       ))}
@@ -177,7 +181,9 @@ const renderContentBasedOnType = (item) => {
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  // content: state.content
 });
+
 
 const mapDispatchToProps = {
   updateContent 
