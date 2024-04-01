@@ -1,74 +1,63 @@
-# SparkHub-Frontend
-a platform for sharing and collaborating on knowledge, such as tutorials, guides, and educational content, any content not just educational using django for backend and react for frontend
+# SPARKHUB PLATFORM
+![HomePage](./sparkhub/src/assets/homepage.png)
+<p> Welcome to SparkHub, a dynamic knowledge sharing hub powered by Django and React! SparkHub is not just another educational platform; it's a versatile space for users to share and collaborate on various types of content, whether it's educational materials, creative projects, or industry insights. </p>
 
-# Getting Started with Create React App
+## Features
+- User Management: User registration, login, and logout functionalities with authentication and authorization mechanisms.
+
+- Content Management: Model creation for different content types (text, images, videos), with functionalities to create, edit, and delete content, along with user permissions management.
+
+- Search Functionality: Full-text search for content based on title, tags, and content itself.
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies Used
 
-## Available Scripts
+- Backend:Django
+- Frontend: React
+- Database: PostgreSQL
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+1. Clone the repository:
+```sh
+git clone https://github.com/catherinekimani/SparkHub-Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+git clone https://github.com/catherinekimani/SparkHub-Backend
+```
+```sh
+cd SparkHub-Backend/
+# Setup and activate virtual environment
+python3 -m venv virtual
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+source venv/bin/activate
 
-### `npm test`
+# Install dependencies
+pip install -r requirements.txt
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Run migrations
+python manage.py migrate
 
-### `npm run build`
+# Start Django development server
+python manage.py runserver
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup Frontend:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+cd SparkHub-Frontend/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+npm install
 
-### `npm run eject`
+# Start React development server
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Visit http://localhost:3000
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact
+If you have any questions, suggestions, or just want to say hello, you can reach out to me at:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email: sparkhubinfo2024@gmail.com
+Twitter: [ckimani](https://twitter.com/ckimani882)
+LinkedIn: [CatherineKimani](https://www.linkedin.com/in/catherine-kimani/)
