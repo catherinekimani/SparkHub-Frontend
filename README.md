@@ -29,7 +29,7 @@ cd SparkHub-Backend/
 # Setup and activate virtual environment
 python3 -m venv virtual
 
-source venv/bin/activate
+source virtual/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
